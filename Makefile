@@ -1,3 +1,7 @@
+healthcheck:
+	@which docker || echo "docker is not installed"
+	@which docker-compose || echo "docker-compose is not installed"
+
 install:
 	pip3 install --requirement requirements.txt
 
@@ -13,13 +17,9 @@ start: build
 
 stop:
 	docker stop server
-	
+
+testUnit:
+	python3 -m unittest
+
 clean:
 	rm -r __pycache__
-
-healthcheck:
-	@which docker || echo "docker is not installed"
-	@which docker-compose || echo "docker-compose is not installed"
-
-test:
-	python3 -m unittest
