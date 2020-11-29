@@ -7,6 +7,6 @@ COPY service.py /
 COPY repository.py /
 COPY controller.py /
 
-EXPOSE 6379 27017 8080 4444
+EXPOSE 6379 27017 8080
 
 CMD ["python3", "./controller.py"]
